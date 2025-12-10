@@ -9,7 +9,7 @@ const FifthPageMain = () => {
   return (
     <div>
 
-      <div className="flex flex-col relative top-20  bg-black w-screen h-fit">
+      <div className=" ">
         <div>
           <FifthPageHero/>
         </div>
@@ -21,9 +21,7 @@ const FifthPageMain = () => {
             />
           ))}
         </div>
-        <div>
           <FifthPageButton/>
-        </div>
         
       </div>
 
