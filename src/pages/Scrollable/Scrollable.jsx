@@ -5,6 +5,7 @@ import ThirdMain from "./Third Page/ThirdMain";
 import SecondPage from "./Second Page/SecondPage";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import FourthMain from "./Fourth Page/FourthMain";
+import FifthPageMain from "./Fifth page/FifthPageMain";
 
 const Scrollable = () => {
   return (
@@ -20,6 +21,10 @@ const Scrollable = () => {
       <div className="bg-black w-screen h-fit ">
         <FourthMain/>
         
+      </div>
+
+      <div className=" bg-black w-screen h-fit flex justify-center  ">
+        <FifthPageMain/>
       </div>
 
 
