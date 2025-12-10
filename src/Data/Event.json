@@ -26,6 +26,15 @@
         "Date": "December 10, 2025",
         "Time": "9:00 AM onwards",
         "Location": "Computer Lab 1 & 2"
+    },
+    {
+        "top": "Hackathon",
+        "image": "https://imgs.search.brave.com/JmJtLkYwNw-VYfHY1lIH0Vmi8LZUCrc33H0gT1W5rxA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c2lkZXNob3cuY29t/L2Nkbi1jZ2kvaW1h/Z2UvcXVhbGl0eT05/MCxmPWF1dG8vaHR0/cHM6Ly93d3cuc2lk/ZXNob3cuY29tL3N0/b3JhZ2UvcHJvZHVj/dC1pbWFnZXMvNDAw/MzkyL3NpZGVzaG93/LWNvbGxlY3RpYmxl/cy1wb2tlbW9uLXBp/a2FjaHUtbGlmZS1z/aXplLWZpZ3VyZS1n/YWxsZXJ5LTY4NzE5/MmNjNjg5ZGQuanBn",
+        "Heading": "24-Hour Code Blitz",
+        "para": "A high-intensity, sleepless coding challenge to solve real-world problems using free software.",
+        "Date": "December 10, 2025",
+        "Time": "9:00 AM onwards",
+        "Location": "Computer Lab 1 & 2"
     }
 
 ]

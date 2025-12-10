@@ -17,7 +17,7 @@ const Scrollable = () => {
         <ThirdMain />
       </div>
 
-      <div className="bg-black w-screen h-screen ">
+      <div className="bg-black w-screen h-fit ">
         <FourthMain/>
         
       </div>
