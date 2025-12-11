@@ -10,7 +10,10 @@ import Scrollable from './pages/Scrollable/Scrollable'
 const App = () => {
   return (
     <div >
-      <div className=' bg-[#101C41] h-screen '>
+      <div className=' h-screen '
+      style={{
+                  background: 'linear-gradient(to bottom, #1e3a5f, #0f2847)', // EDIT: Card gradient
+                }}>
         <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path='/scrollable' element={<Scrollable/>} />
