@@ -1,4 +1,6 @@
+import { Github, Instagram,  Linkedin, Twitter } from 'lucide-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -26,13 +28,11 @@ const Footer = () => {
               <h1 className="text-white text-sm font-medium"> Quick Links</h1>
               <Link className="text-[10px] text-white font-light"> About</Link>
               <Link className="text-[10px] text-white font-light">
-                {" "}
                 Projects
               </Link>
               <Link className="text-[10px] text-white font-light"> Events</Link>
               <Link className="text-[10px] text-white font-light"> Join</Link>
               <Link className="text-[10px] text-white font-light">
-                {" "}
                 Contact
               </Link>
             </div>

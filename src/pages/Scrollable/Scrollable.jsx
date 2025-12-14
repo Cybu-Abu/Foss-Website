@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../Main Page/Navbar";
 import SecondHero from "./Second Page/SecondHero";
 import ThirdMain from "./Third Page/ThirdMain";
 import SecondPage from "./Second Page/SecondPage";
@@ -19,11 +18,12 @@ import FifthPageButton from "./Fifth page/FifthPageButton";
 import SixthPageMain from "./Sixth Page/SixthPageMain";
 import LastPageMain from "./Last Page/LastPageMain";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
 
 const Scrollable = () => {
   return (
-    <div>
-      <Navbar />
+    <div className="">
+      <Navbar/>
       <div
         className="w-screen h-screen"
         style={{
