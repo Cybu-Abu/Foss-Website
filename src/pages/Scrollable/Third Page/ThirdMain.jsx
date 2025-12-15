@@ -23,8 +23,8 @@ const ThirdMain = () => {
       scrollTrigger: {
         trigger: thirdMainRef.current,
         scroller: "body",
-        start: "top 50%",
-        end: "bottom 50%",
+        start: "top 30%",
+        end: "bottom 70%",
         scrub: 2,
       }
 

@@ -6,7 +6,7 @@ import prevEventData from "../../../../Data/PreviousEvent.json";
 const RecentEventsMain = () => {
   return (
     <div>
-      <RecentEventHero/>
+
 
       <div className="flex flex-row items-center justify-evenly">
         {prevEventData.map((event,index)=>(
