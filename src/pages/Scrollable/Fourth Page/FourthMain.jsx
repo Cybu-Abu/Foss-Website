@@ -25,7 +25,6 @@ const FourthMain = () => {
       scrollTrigger:{
         trigger:fourthRefCard.current,
         scroller:"body",
-        markers:true,
         start:"top 50%",
         end:"bottom 50%",
         scrub:2

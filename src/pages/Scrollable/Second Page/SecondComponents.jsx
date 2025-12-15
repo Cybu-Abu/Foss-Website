@@ -14,9 +14,9 @@ const SecondComponents = () => {
     const linRandomY=gsap.utils.random(-80,-90,2)
     const pyRandomY=gsap.utils.random(0,-10,2)
     
-    const pyRandomX=gsap.utils.random(-500,-700,2)
+    const pyRandomX=gsap.utils.random(-500,-550,2)
     const linRandomX=gsap.utils.random(0,50,2)
-    const blenRandomX=gsap.utils.random(500,700,2)
+    const blenRandomX=gsap.utils.random(500,500,2)
 
 
     const componentAnimation=()=>{
