@@ -55,10 +55,6 @@ const FourthMain = () => {
       opacity:0,
       stagger:0.3
     })
-    tl2.from(fourthRefCard.current.querySelectorAll("button"),{
-      scale:0,
-      opacity:0,
-    })
   })
   
   
