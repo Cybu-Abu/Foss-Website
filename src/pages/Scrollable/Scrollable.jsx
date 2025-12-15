@@ -22,7 +22,7 @@ import Navbar from "../../components/Navbar";
 
 const Scrollable = () => {
   return (
-    <div className=" overflow-x-hidden ">
+    <div className=" overflow-hidden ">
       <Navbar />
       <div
         className="w-screen h-screen"
