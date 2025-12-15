@@ -10,7 +10,9 @@ const SecondPage = () => {
     <div className="w-screen absolute top-1/2 left-1/2 text-white  items-center text-center transform -translate-x-1/2 -translate-y-1/2 gap-5 overflow-hidden">
       <SecondHero/>
       <SecondButton/>
-      <SecondComponents/>
+      <div className='flex items-center justify-evenly w-screen'>
+         <SecondComponents/>
+      </div>
       
     </div>
   )
