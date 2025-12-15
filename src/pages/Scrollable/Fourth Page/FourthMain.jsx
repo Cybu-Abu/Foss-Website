@@ -18,6 +18,7 @@ const FourthMain = () => {
   const fourthRefCard=useRef()
   const fourthRefRecentCard=useRef()
   const fourthRefRecentHero=useRef()
+  const fourthRefButton=useRef()
 
   useGSAP(()=>{
     var tl2=gsap.timeline({
@@ -54,7 +55,7 @@ const FourthMain = () => {
       opacity:0,
       stagger:0.3
     })
-    tl2.from("button",{
+    tl2.from(fourthRefCard.current.querySelectorAll("button"),{
       scale:0,
       opacity:0,
     })
@@ -88,7 +89,9 @@ const FourthMain = () => {
 
 
       <div className=" flex w-full justify-center">
-        <button className='text-white border-[#114BCC] border-2 py-2 px-15 rounded-lg text-[10px] my-20 active:scale-95'>View All Events</button>
+        <button 
+        ref={fourthRefButton}
+        className='text-white border-[#114BCC] border-2 py-2 px-15 rounded-lg text-[10px] my-20 active:scale-95'>View All Events</button>
       </div>
         
     </div>
