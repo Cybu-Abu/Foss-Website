@@ -23,7 +23,7 @@ import Navbar from "../../components/Navbar";
 const Scrollable = () => {
   return (
     <div className="">
-      <Navbar/>
+      <Navbar />
       <div
         className="w-screen h-screen"
         style={{
@@ -32,26 +32,55 @@ const Scrollable = () => {
       >
         <SecondPage />
       </div>
-      <div className="bg-black h-screen w-screen ">
+      <div
+        className="bg-black h-screen w-screen "
+        style={{
+          backgroundImage: "url('/Background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <ThirdMain />
       </div>
 
-      <div className="bg-black w-screen h-fit ">
+      <div className="bg-black w-screen h-fit "
+      style={{
+          backgroundImage: "url('/Background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <FourthMain />
       </div>
 
-      <div className="flex flex-col  bg-black h-fit w-screen">
+      <div className="flex flex-col  bg-black h-fit w-screen"
+      style={{
+          backgroundImage: "url('/Background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <FifthPageMain />
       </div>
 
-      <div className="bg-black w-screen h-screen">
+      <div className="bg-black w-screen h-screen"
+      style={{
+          backgroundImage: "url('/Background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <SixthPageMain />
       </div>
 
-      <div className="bg-black w-screen h-fit">
+      <div className="bg-black w-screen h-fit"
+      style={{
+          backgroundImage: "url('/Background.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <LastPageMain />
-
-        
       </div>
     </div>
   );
