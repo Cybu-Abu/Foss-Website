@@ -6,7 +6,7 @@ const RecentEventsCard = (props) => {
 
   return (
     <div>
-       <div className=" flex flex-row justify-between">
+       <div className=" flex flex-row justify-evenly items-center">
           <div className="mx-12 my-5">
             <div className="bg-[#1E1E1E] w-70 min-h-[372px] h-fit rounded-3xl overflow-hidden ">
               <div className="object-cover max-h-[40%] w-full relative overflow-hidden">

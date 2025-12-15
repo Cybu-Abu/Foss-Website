@@ -11,12 +11,17 @@ const FourthMain = () => {
   return (
     <div >
       <FouthHero/>
-      <div className="flex flex-row">
-        {eventData.map((event,index)=>(
+      <div className="flex flex-col ">
+        <div>
+          <h4 className="text-white font-semibold mx-12">Upcoming Events</h4>
+        </div>
+        <div className="flex flex-row items-center justify-evenly">
+          {eventData.map((event,index)=>(
         <FourthCard 
         key={index}
         event={event}/>
       ))}
+        </div>
       </div>
 
       <RecentEventsMain/>

@@ -6,15 +6,15 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const SecondComponents = () => {
-    const pyRandomRot=gsap.utils.random(-8,10,2)
-    const linRandomRot=gsap.utils.random(-8,9,2)
-    const blenRandomRot=gsap.utils.random(-8,5,2)
+    const pyRandomRot=gsap.utils.random(-8,4,2)
+    const linRandomRot=gsap.utils.random(-8,2,2)
+    const blenRandomRot=gsap.utils.random(-8,0,2)
 
-    const blenRandomY=gsap.utils.random(-150,-300,2)
+    const blenRandomY=gsap.utils.random(-150,-160,2)
     const linRandomY=gsap.utils.random(-80,-90,2)
     const pyRandomY=gsap.utils.random(0,-10,2)
     
-    const pyRandomX=gsap.utils.random(50,300,2)
+    const pyRandomX=gsap.utils.random(100,300,2)
     const linRandomX=gsap.utils.random(500,700,2)
     const blenRandomX=gsap.utils.random(1000,1200,2)
 

@@ -40,7 +40,7 @@ const Scrollable = () => {
         <FourthMain />
       </div>
 
-      <div className="flex flex-col  bg-black h-fit  ">
+      <div className="flex flex-col  bg-black h-fit w-screen">
         <FifthPageMain />
       </div>
 

@@ -9,8 +9,8 @@ const FourthCard = (props) => {
       <div>
         
         
-      <div className=" flex flex-row justify-between">
-          <div className="mx-12 my-5">
+      <div className=" flex flex-row ">
+          <div className="my-10">
             <div className="bg-[#1E1E1E] w-70 min-h-[493px] h-fit rounded-3xl overflow-hidden ">
               <div className="object-cover max-h-[40%] w-full relative overflow-hidden">
                 

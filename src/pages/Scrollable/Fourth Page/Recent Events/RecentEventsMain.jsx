@@ -8,7 +8,7 @@ const RecentEventsMain = () => {
     <div>
       <RecentEventHero/>
 
-      <div className="flex flex-row ">
+      <div className="flex flex-row items-center justify-evenly">
         {prevEventData.map((event,index)=>(
         <RecentEventsCard 
         key={index}
