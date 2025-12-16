@@ -22,7 +22,7 @@ import Navbar from "../../components/Navbar";
 
 const Scrollable = () => {
   return (
-    <div className=" overflow-hidden ">
+    <div >
       <Navbar />
       <div
         className="w-screen h-screen"
@@ -73,7 +73,7 @@ const Scrollable = () => {
         <SixthPageMain />
       </div>
 
-      <div className="bg-black w-screen h-fit"
+      <div className="bg-black w-screen h-fit "
       style={{
           backgroundImage: "url('/Background.png')",
           backgroundSize: "cover",

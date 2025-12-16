@@ -4,6 +4,7 @@ import React from "react";
 const FifthPageCard = ({ project }) => {
   const projectPlat = project.platform;
   const contributionCount = project.Contribution || 0;
+  
 
   return (
     <div>
