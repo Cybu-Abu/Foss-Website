@@ -16,7 +16,6 @@ const LastPageContents = () => {
         trigger:lastPageContentsRef.current,
         scroller:"body",
         scrub:2,
-        markers:true,
         start:"top 50%",
         end:"bottom 70%"
       }
