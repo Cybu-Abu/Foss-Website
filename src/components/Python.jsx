@@ -3,7 +3,7 @@ import React from "react";
 
 const Python = () => {
   return (
-    <div className="box bg-[#181818] w-fit min-w-[300px] h-16 flex content-center items-center  shadow-xl/70">
+    <div className="box bg-[#181818] lg:min-w-[300px] w-fit lg:h-16 flex content-center items-center  shadow-xl/70 min-w-5 px-5 py-2 rounded-2xl">
       <div className=" flex flex-row justify-between items-center gap-3 py-3 px-2">
         <img
           className="w-10"
@@ -13,7 +13,7 @@ const Python = () => {
         <h1>Python</h1>
       </div>
 
-      <div className="w-3/4">{/* blank div for space */}</div>
+      <div className="lg:w-3/4 w-10">{/* blank div for space */}</div>
 
       <div className="px-5">
         <X size={20} />

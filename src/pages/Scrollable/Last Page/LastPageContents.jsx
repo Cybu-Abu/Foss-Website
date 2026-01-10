@@ -9,6 +9,7 @@ const LastPageContents = () => {
   var lastPageContentsRef=useRef()
   var lastPageDivRef1=useRef()
   var lastPageDivRef2=useRef()
+ 
 
   useGSAP(()=>{
     var t2 = gsap.timeline({
@@ -17,8 +18,14 @@ const LastPageContents = () => {
         scroller:"body",
         scrub:2,
         start:"top 50%",
-        end:"bottom 70%"
+        end:"bottom 70%",
       }
+    })
+
+    t2.from(lastPageDivRef1.current,{
+      x:100,
+      opacity:0,
+      stagger:0.3
     })
 
     t2.from(".div1",{
@@ -31,6 +38,13 @@ const LastPageContents = () => {
       opacity:0,
       stagger:0.3
     })
+    t2.from(lastPageDivRef2.current,{
+      x:-100,
+      opacity:0,
+      stagger:0.3
+    })
+
+
 
   })
 
@@ -39,7 +53,9 @@ const LastPageContents = () => {
     <div ref={lastPageContentsRef}>
       <div className="w-screen">
           <div className="flex flex-col items-center">
-            <h3 className="text-white font-semibold text-lg">
+            <h3 
+            ref={lastPageDivRef1}
+            className="text-white font-semibold text-lg ">
               Steps To Follow:
             </h3>
           </div>
@@ -74,9 +90,11 @@ const LastPageContents = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center flex-col items-center">
+        <div 
+        ref={lastPageDivRef2}
+        className="flex justify-center flex-col items-center">
           <button className="text-white bg-[#2563E8] font-semibold text-[12px] rounded-lg px-10 py-2 active:scale-95 my-3 w-fit">Start</button>
-          <h4 className="text-[#0CEBFF] underline underline-offset-3 text-sm">Contributor Guidelines</h4>
+          <h4 className="text-[#0CEBFF] underline underline-offset-3 text-sm ">Contributor Guidelines</h4>
         </div>
     </div>
   )

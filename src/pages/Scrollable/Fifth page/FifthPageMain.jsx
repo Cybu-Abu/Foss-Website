@@ -26,7 +26,7 @@ const FifthPageMain = () => {
       scroller:"body",
       scrub:2,
       start:"top 50%",
-      end:"bottom 60%"
+      end:"bottom 60%",
     }
 
     })
@@ -52,7 +52,7 @@ const FifthPageMain = () => {
         scroller:"body",
         scrub:2,
         start:"top 80%",
-        end:"bottom 90%"
+        end:"bottom 90%",
       }
     })
   })

@@ -55,8 +55,10 @@ const LastPageMain = () => {
   return (
     <div ref={lastPageMainRef}>
       <div ref={lastPageHeroRef}><LastPageHero/></div>
-      <div ref={lastPageContentsRef}><LastPageContents/></div>
+<div className='flex flex-col gap-8'>
+        <div ref={lastPageContentsRef}><LastPageContents/></div>
       <Footer/>
+</div>
     </div>
   )
 }

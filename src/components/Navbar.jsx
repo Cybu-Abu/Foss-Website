@@ -1,44 +1,86 @@
-import React, { useRef } from 'react'
-import { Github, Instagram, Linkedin, Twitter } from 'lucide-react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
+import React, { useRef } from "react";
+import { Github, Instagram, Linkedin, Menu, Twitter, X } from "lucide-react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
-  const tl= gsap.timeline()
-  const logoRef=useRef()
-  const navRef=useRef()
-  const navAnimation=()=>{
-      useGSAP(()=>{
-    tl.from("h2",{
-      y:-100,
-      opacity:0,
-      duration:.5,
-      ease:"power3.out"
-    })
-    tl.from("h4",{
-      y:-100,
-      opacity:0,
-      duration:.5,
-      stagger:.3
-    })
+  const tl = gsap.timeline();
+  const logoRef = useRef();
+  const navRef = useRef();
+  const navMobRef = useRef();
 
-    tl.from(logoRef.current.querySelectorAll("svg"),{
-      y:-100,
-      opacity:0,
-      duration:.5,
-      stagger:.3
-    },"<1")
-  },{scope:navRef})
+  const navAnimation = () => {
+    useGSAP(
+      () => {
+        tl.from("h2", {
+          y: -100,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power3.out",
+        });
+        tl.from("h4", {
+          y: -100,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.3,
+        });
+
+        tl.from(
+          logoRef.current.querySelectorAll("svg"),
+          {
+            y: -100,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.3,
+          },
+          "<2"
+        );
+      },
+      { scope: navRef }
+    );
+  };
+  navAnimation();
+
+  
+  const { contextSafe } = useGSAP();
+
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      
+    }
   }
-  navAnimation()
-
   return (
-    <div 
-      ref={navRef}
-    className=''>
-      <div className="flex items-center justify-between px-40 py-4 ">
-        <h2 className='text-white font-bold text-2xl'>FOSS CELL</h2>
-        <div className='text-white font-bold flex items-center justify-between gap-4'>
+    <div ref={navRef} className="relative overflow-hidden">
+      <div className="p-5 lg:hidden absolute right-0 ">
+        <Menu
+          onClick={contextSafe(() => {
+            gsap.to(navMobRef.current, {
+              xPercent: -100,
+              opacity: 1,
+            });
+          })}
+          color="#ffffff"
+        />
+      </div>
+      <div
+        ref={navMobRef}
+        className="h-screen w-[70%] bg-white-200 z-10 translate-x-full fixed right-0 backdrop-blur-2xl"
+      >
+        <div className="text-2xl p-3 flex flex-row justify-between">
+          <h4>Menu</h4>
+          <div onClick={contextSafe(()=>{
+            gsap.to(navMobRef.current,{
+              xPercent:0,
+              opacity:0
+            })
+          })}>
+            <X color="#ffffff" />
+          </div>
+        </div>
+        <div className="h-screen grid grid-rows-6 text-white font-semibold text-3xl divide-dashed ">
           <h4>Home</h4>
           <h4>About</h4>
           <h4>Events</h4>
@@ -46,17 +88,56 @@ const Navbar = () => {
           <h4>Team</h4>
           <h4>Join</h4>
         </div>
-        <div 
-        ref={logoRef}
-        className='text-white flex items-center justify-between gap-4'>
-        <Twitter/>
-        <Linkedin/>
-        <Github/>
-        <Instagram/>
+      </div>
+      <div className="lg:flex lg:items-center lg:justify-between lg:px-40 lg:py-4 flex items-center justify-between">
+        <h2 className="text-white font-bold lg:text-2xl px-3 py-5">
+          FOSS CELL
+        </h2>
+        <div>
+          <div className="text-white font-bold lg:flex lg:items-center lg:justify-between lg:gap-4 hidden">
+            <h4
+            onClick={()=>{
+              scrollToSection('home')
+            }}
+            className="cursor-pointer"
+            >Home</h4>
+            <h4
+            onClick={()=>{
+              scrollToSection('about')
+            }}
+            className="cursor-pointer"
+            >About</h4>
+            <h4 onClick={()=>{
+              scrollToSection('events')
+            }}
+            className=" cursor-pointer ">Events</h4>
+            <h4
+            onClick={()=>{
+              scrollToSection('projects')
+            }}
+            className=" cursor-pointer "
+            >Project</h4>
+            <h4
+            onClick={()=>{
+              scrollToSection('team')
+            }}
+            className="cursor-pointer"
+            >Team</h4>
+            <h4>Join</h4>
+          </div>
+        </div>
+        <div
+          ref={logoRef}
+          className="text-white lg:flex lg:items-center lg:justify-between lg:gap-4 hidden"
+        >
+          <Twitter />
+          <Linkedin />
+          <Github />
+          <Instagram />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

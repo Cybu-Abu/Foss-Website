@@ -63,7 +63,7 @@ const ThirdMain = () => {
         {/* Hero */}
         <div
           
-          className="flex flex-col items-center justify-center"
+          className="flex flex-col items-center justify-center h-fit"
         >
 
           <div 
@@ -74,13 +74,13 @@ const ThirdMain = () => {
 
           <h1 
           ref={thirdMainRefHero2}
-          className="text-white font-bold   text-5xl my-12">
+          className="text-white font-bold lg:text-5xl lg:my-15 text-5xl my-10">
             Our Values
           </h1>
 
           <div 
           ref={thirdMainRefComponent}
-          className="flex flex-row gap-9">
+          className="lg:flex lg:flex-row lg:gap-9 grid grid-cols-2 grid-rows-2 p-5 gap-4">
 
             {/* Components */}
             <OpenDevelopment />

@@ -1,5 +1,5 @@
 import { Calendar, Clock, MapPin } from 'lucide-react'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import FouthHero from './FourthHero'
 import FourthCard from './FourthCard'
 import eventData from "../../../Data/Event.json";
@@ -8,6 +8,7 @@ import RecentEventsMain from './Recent Events/recentEventsMain';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { div } from 'motion/react-client';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -19,8 +20,11 @@ const FourthMain = () => {
   const fourthRefRecentCard=useRef()
   const fourthRefRecentHero=useRef()
   const fourthRefButton=useRef()
+  const [mobiletl, setMobiletl] = useState(null)
 
   useGSAP(()=>{
+
+    var mm=gsap.matchMedia()
     var tl2=gsap.timeline({
       scrollTrigger:{
         trigger:fourthRefCard.current,
@@ -30,7 +34,28 @@ const FourthMain = () => {
         scrub:2
       }
     })
-    tl2.from(fourthHeroRef.current.querySelector("h1"),{
+
+    var tl3 = gsap.timeline({
+      scrollTrigger:{
+          trigger:fourthMain.current,
+          scroller:"body",
+          pin:true,
+          scrub:2,
+          markers:true,
+          start:"top 0%",
+          end: "+=3000", // THIS IS KEY: It gives 3000px of scroll room
+          anticipatePin: 1
+        }
+    })
+
+    mm.add("(max-width: 768px)",()=>{
+      tl3.to(fourthRefCard.current.children,{
+        xPercent:-300,        
+      })
+      setMobiletl(tl3)
+    })
+    mm.add("(min-width: 769px)",()=>{
+          tl2.from(fourthHeroRef.current.querySelector("h1"),{
       x:-100,
       opacity:0,
     })
@@ -54,23 +79,24 @@ const FourthMain = () => {
       opacity:0,
       stagger:0.3
     })
+    })
   })
   
   
   return (
-    <div ref={fourthMain}>
+    <div ref={fourthMain} className='h-fit'>
       <div ref={fourthHeroRef}><FouthHero/></div>
-      <div className="flex flex-col ">
+      <div className="lg:flex lg:flex-col flex flex-col overflow-x-scroll lg:overflow-hidden justify-start items-center ">
         <div>
           <h4 className="text-white font-semibold mx-12">Upcoming Events</h4>
         </div>
         <div 
         ref={fourthRefCard}
-        className="flex flex-row items-center justify-evenly">
+        className="flex flex-row items-center justify-evenly lg:overflow-hidden lg:snap-none lg:px-0 overflow-x-auto snap-x snap-mandatory no-scrollbar w-full px-[15%] ">
           {eventData.map((event,index)=>(
-        <FourthCard 
-        key={index}
-        event={event}/>
+            <div key={index} className='snap-center shrink-0'>
+              <FourthCard event={event}/>
+            </div>
       ))}
         </div>
       </div>
@@ -79,7 +105,7 @@ const FourthMain = () => {
       </div>
 
       <div ref={fourthRefRecentCard}>
-        <RecentEventsMain/>
+        <RecentEventsMain timeline={mobiletl}/>
       </div>
 
 

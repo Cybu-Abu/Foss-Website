@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Python from "../../../components/Python";
 import Linux from "../../../components/linux";
 import Blender from "../../../components/Blender";
@@ -6,75 +6,47 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const SecondComponents = () => {
-    const pyRandomRot=gsap.utils.random(-8,4,2)
-    const linRandomRot=gsap.utils.random(-8,2,2)
-    const blenRandomRot=gsap.utils.random(-8,0,2)
+    const container = useRef();
 
-    const blenRandomY=gsap.utils.random(-150,-160,2)
-    const linRandomY=gsap.utils.random(-80,-90,2)
-    const pyRandomY=gsap.utils.random(0,-10,2)
-    
-    const pyRandomX=gsap.utils.random(-500,-550,2)
-    const linRandomX=gsap.utils.random(0,50,2)
-    const blenRandomX=gsap.utils.random(500,500,2)
+    useGSAP(() => {
+        let mm = gsap.matchMedia();
 
 
-    const componentAnimation=()=>{
-          useGSAP(()=>{
-        gsap.to(".python",{
-            rotate:pyRandomRot,
-            x:pyRandomX,
-            y:pyRandomY,
-            delay:1,
-            duration:1,
-        })
-        gsap.to(".linux",{
-            rotate:linRandomRot,
-            x:linRandomX,
-            y:linRandomY,
-            delay:1,
-            duration:1,
-        })
-        gsap.to(".blender",{
-            rotate:blenRandomRot,
-            x:blenRandomX,
-            y:blenRandomY,
-            delay:1,
-            duration:1,
-        })
+        mm.add("(min-width: 769px)", () => {
+            gsap.to(".python", { x: -500, y: -10, rotate: -5, duration: 1, delay: 1 });
+            gsap.to(".linux", { x: 0, y: -10, rotate: 2, duration: 1, delay: 1 });
+            gsap.to(".blender", { x: 500, y: -10, rotate: 5, duration: 1, delay: 1 });
+        });
 
-        gsap.from(".python",{
-          opacity:0,
-          delay:1,
-          duration:.8
-        })
-        gsap.from(".linux",{
-          opacity:0,
-          delay:1,
-          duration:.8
-        })
-        gsap.from(".blender",{
-          opacity:0,
-          delay:1,
-          duration:.8
-        })
-    })
-    }
+        // 2. MOBILE LOGIC (Screen 768px or smaller)
+        mm.add("(max-width: 768px)", () => {
+            // Linux stays at top
+            gsap.to(".linux", { x: 0, y: -10, rotate: 0, duration: 1, delay: 1 });
+            // Python goes BELOW Linux
+            gsap.to(".python", { x: 0, y: 150, rotate: 0, duration: 1, delay: 1 });
+            // Blender goes BELOW Python
+            gsap.to(".blender", { x: 0, y: 300, rotate: 0, duration: 1, delay: 1 });
+        });
 
-    componentAnimation()
-  return (
-    <div>
-      <div className="python">
-        <Python />
-      </div>
-      <div className="linux">
-        <Linux />
-      </div>
-      <div className="blender">
-        <Blender />
-      </div>
-    </div>
-  );
+        // Common "Appear" animation
+        gsap.from([".python", ".linux", ".blender"], {
+            opacity: 0,
+            duration: 0.8,
+            delay: 1,
+            stagger: 0.2 // Optional: makes them appear one by one
+        });
+
+        return () => mm.revert(); // Cleanup
+    }, { scope: container });
+
+    return (
+        <div ref={container} className="lg:min-h-90 flex justify-center min-h-100">
+            {/* Added relative/absolute setup so Y movement works cleanly */}
+            <div className="python" style={{ position: 'absolute' }}><Python /></div>
+            <div className="linux" style={{ position: 'absolute' }}><Linux /></div>
+            <div className="blender" style={{ position: 'absolute' }}><Blender /></div>
+        </div>
+    );
 };
 
 export default SecondComponents;

@@ -17,7 +17,7 @@ const App = () => {
                 }}>
         <Routes>
         <Route path='/' element={<MainPage/>}/>
-        <Route path='/scrollable' element={<Scrollable/>} />
+        <Route path='/main' element={<Scrollable/>} />
       </Routes>
       </div>
       
