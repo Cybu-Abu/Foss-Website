@@ -60,30 +60,30 @@ const LastPageContents = () => {
             </h3>
           </div>
           <div className="my-5">
-            <div className="flex flex-row gap-3 justify-center my-2">
+            <div className="flex flex-row gap-3 lg:justify-center justify-evenly my-2">
               <div 
               className="bg-[#1E1E1E] w-fit h-fit rounded-2xl border-2 border-[#1B3163] div1">
-                <h4 className="text-white px-10 py-4 text-xl font-semibold">
+                <h4 className="text-white lg:px-10 px-5 py-4 lg:text-xl font-semibold text-[12px]">
                   1. Fork a Project Repo
                 </h4>
               </div>
               <div 
               className="bg-[#1E1E1E] w-fit h-fit rounded-2xl border-2 border-[#1B3163] div2">
-                <h4 className="text-white px-10 py-4 text-xl font-semibold">
+                <h4 className="text-white lg:px-10 px-5 py-4 lg:text-xl text-[12px] font-semibold">
                   2. Understand Guidlines
                 </h4>
               </div>
             </div>
-            <div className="flex flex-row gap-3 justify-center my-2">
+            <div className="flex flex-row gap-3 lg:justify-center justify-evenly my-2">
               <div 
               className="bg-[#1E1E1E] w-fit h-fit rounded-2xl border-2 border-[#1B3163] div1">
-                <h4 className="text-white px-10 py-4 text-xl font-semibold">
+                <h4 className="text-white lg:px-10 px-5 py-4 lg:text-xl text-[12px] font-semibold">
                   3. Make Your Changes
                 </h4>
               </div>
               <div 
               className="bg-[#1E1E1E] w-fit h-fit rounded-2xl border-2 border-[#1B3163] div2">
-                <h4 className="text-white px-10 py-4 text-xl font-semibold">
+                <h4 className="text-white lg:px-10 px-5 py-4 lg:text-xl text-[12px] font-semibold">
                   4. Create A Pull Request
                 </h4>
               </div>
